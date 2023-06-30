@@ -116,7 +116,7 @@ if(firebaseUser!=null){
       usersRef.child(firebaseUser.uid).once().then((_) => (DataSnapshot snap){
         if(snap.value!=null){
           Navigator.pushNamedAndRemoveUntil(context, HomeScreen.idScreen, (route) => false);
-          displaytoast("Your have been loggedin successfully", context);
+          displaytoast("Your have logged in successfully", context);
         }else{
           _firebaseAuth.signOut();
           displaytoast("No records found.Please register yourself", context);
